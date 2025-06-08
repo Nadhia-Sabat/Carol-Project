@@ -1,0 +1,157 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Belleza", sans-serif;
+}
+
+body {
+    background-color:#0d3b2e;
+    color: #fff;
+  }
+
+  header {
+   
+    padding: 2rem 1rem;
+    text-align: center;
+    position: relative;
+
+        background-image: url('img/background.jpg');
+        background-size: cover; /* cobre toda a área visível */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed; /* efeito de paralaxe */
+        color: #f5f5f5; /* texto claro para contraste */
+
+        background-attachment: scroll; /* melhor para mobile */
+        overflow: hidden;
+    
+
+  }
+
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 25, 00, 0.7);
+    z-index: 0;
+
+    
+}
+
+header * {
+    position: relative;
+    z-index: 1;
+  }
+
+h1{
+    font-weight: lighter;
+    font-stretch: condensed; /* deixa a fonte mais estreita */
+    font-weight:100px;
+
+    -webkit-font-smoothing: antialiased; /* suaviza o texto no Safari/Chrome */
+    -moz-osx-font-smoothing: grayscale; /* suaviza o texto no Firefox */
+}
+  
+
+.bag-menu-button {
+   
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    padding: 0;
+
+  }
+  
+ .svg { /*BAG*/
+    width: 100%;
+    height: 100%;
+
+    stroke: white;
+
+    display:block;
+    
+  }
+  
+  .cart-count { /*O CONTADOR DENTRO DA BAG*/
+    position: absolute;
+    top: 60%; /* Ajuste para posicionar dentro do ícone */
+    right: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.6rem;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 5px;
+    line-height: 1;
+
+    min-width:16px;
+    text-align:center;
+
+    pointer-events: none; /* Evita que atrapalhe cliques */
+  }
+
+  .bag-svg-wrapper {
+    position: relative;
+    width: 32px;  /* Mesma largura do SVG */
+    height: 32px; /* Mesma altura do SVG */
+    display: inline-block;
+  }
+
+  .menu-button{
+    border: none;
+    background:none;
+    color:white;
+
+    font-size: 2.5rem;           /* Ajuste para ficar visualmente grande igual ao h1 */
+    line-height: 1;              /* Remove espaçamentos verticais extras */
+    cursor: pointer;
+    height: auto;                /* Deixe crescer conforme o conteúdo */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+
+  .header-content{
+    display: flex;
+    align-items: center;      /* Alinha verticalmente */
+    justify-content: space-between; /* Espaço entre títulos (esq) e menu (dir) */
+    padding: 0 1rem;          /* Espaçamento horizontal opcional */
+  }
+
+  .title-wrapper {
+    display: flex;
+    flex-direction: column;   /* Empilha h1 e h2 verticalmente */
+    justify-content: center;
+  }
+
+  .menu-icons {
+    
+    display: flex;
+    flex-direction: column;   /* Empilha h1 e h2 verticalmente */
+    justify-content: center;
+  }
+
+
+
+  /* TOOLBAR */
+.toolbar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #4e342e;
+  }
+
+
+
+  
+
+  
+  
