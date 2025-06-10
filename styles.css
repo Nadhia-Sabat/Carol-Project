@@ -1,157 +1,322 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: "Belleza", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Belleza", sans-serif;
 }
 
 body {
-    background-color:#0d3b2e;
-    color: #fff;
-  }
+  background-color: #2e1a14;
+ /* background-color: #4e342e; */
+/*  background-color: #0d3b2e; */
+  color: #fff;
+}
 
-  header {
-   
-    padding: 2rem 1rem;
-    text-align: center;
-    position: relative;
+header {
 
-        background-image: url('img/background.jpg');
-        background-size: cover; /* cobre toda a área visível */
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed; /* efeito de paralaxe */
-        color: #f5f5f5; /* texto claro para contraste */
+  padding: 2rem 1rem;
+  text-align: center;
+  position: relative;
 
-        background-attachment: scroll; /* melhor para mobile */
-        overflow: hidden;
-    
+  background-image: url('img/background.jpg');
+  background-size: cover;
+  /* cobre toda a área visível */
+  background-repeat: no-repeat;
+  background-position: center;
+ 
+  color: #f5f5f5;
+  /* texto claro para contraste */
 
-  }
+  background-attachment: scroll;
+  /* melhor para mobile */
+  overflow: hidden;
 
-  header::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 25, 00, 0.7);
-    z-index: 0;
 
-    
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 25, 0, 0.7);
+  z-index: 0;
+
+
 }
 
 header * {
-    position: relative;
-    z-index: 1;
-  }
-
-h1{
-    font-weight: lighter;
-    font-stretch: condensed; /* deixa a fonte mais estreita */
-    font-weight:100px;
-
-    -webkit-font-smoothing: antialiased; /* suaviza o texto no Safari/Chrome */
-    -moz-osx-font-smoothing: grayscale; /* suaviza o texto no Firefox */
+  position: relative;
+  z-index: 1;
 }
-  
+
+h1 {
+  font-weight: lighter;
+  font-stretch: condensed;
+  /* deixa a fonte mais estreita */
+  font-weight: 100;
+
+  -webkit-font-smoothing: antialiased;
+  /* suaviza o texto no Safari/Chrome */
+  -moz-osx-font-smoothing: grayscale;
+  /* suaviza o texto no Firefox */
+}
+
 
 .bag-menu-button {
-   
-    background: none;
-    border: none;
-    cursor: pointer;
 
-    padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
 
-  }
-  
- .svg { /*BAG*/
-    width: 100%;
-    height: 100%;
+  padding: 0;
 
-    stroke: white;
+}
 
-    display:block;
-    
-  }
-  
-  .cart-count { /*O CONTADOR DENTRO DA BAG*/
-    position: absolute;
-    top: 60%; /* Ajuste para posicionar dentro do ícone */
-    right: 50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 0.6rem;
-    font-weight: bold;
-    border-radius: 50%;
-    padding: 2px 5px;
-    line-height: 1;
+.svg {
+  /*BAG*/
+  width: 100%;
+  height: 100%;
 
-    min-width:16px;
-    text-align:center;
+  stroke: white;
 
-    pointer-events: none; /* Evita que atrapalhe cliques */
-  }
+  display: block;
 
-  .bag-svg-wrapper {
-    position: relative;
-    width: 32px;  /* Mesma largura do SVG */
-    height: 32px; /* Mesma altura do SVG */
-    display: inline-block;
-  }
+}
 
-  .menu-button{
-    border: none;
-    background:none;
-    color:white;
+.cart-count {  /*O CONTADOR DENTRO DA BAG*/
 
-    font-size: 2.5rem;           /* Ajuste para ficar visualmente grande igual ao h1 */
-    line-height: 1;              /* Remove espaçamentos verticais extras */
-    cursor: pointer;
-    height: auto;                /* Deixe crescer conforme o conteúdo */
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  position: absolute;
+  top: 60%;
+  /* Ajuste para posicionar dentro do ícone */
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
+  color: white;
+  font-size: 0.6rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 5px;
+  line-height: 1;
 
+  min-width: 16px;
+  text-align: center;
 
+  pointer-events: none;
+  /* Evita que atrapalhe cliques */
+}
 
-  .header-content{
-    display: flex;
-    align-items: center;      /* Alinha verticalmente */
-    justify-content: space-between; /* Espaço entre títulos (esq) e menu (dir) */
-    padding: 0 1rem;          /* Espaçamento horizontal opcional */
-  }
+.bag-svg-wrapper {
+  position: relative;
+  width: 32px;
+  /* Mesma largura do SVG */
+  height: 32px;
+  /* Mesma altura do SVG */
+  display: inline-block;
+}
 
-  .title-wrapper {
-    display: flex;
-    flex-direction: column;   /* Empilha h1 e h2 verticalmente */
-    justify-content: center;
-  }
+.menu-button {
+  border: none;
+  background: none;
+  color: white;
 
-  .menu-icons {
-    
-    display: flex;
-    flex-direction: column;   /* Empilha h1 e h2 verticalmente */
-    justify-content: center;
-  }
+  font-size: 2.5rem;
+  /* Ajuste para ficar visualmente grande igual ao h1 */
+  line-height: 1;
+  /* Remove espaçamentos verticais extras */
+  cursor: pointer;
+  height: auto;
+  /* Deixe crescer conforme o conteúdo */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 
-  /* TOOLBAR */
+
+.header-content {
+  display: flex;
+  align-items: center;
+  /* Alinha verticalmente */
+  justify-content: space-between;
+  /* Espaço entre títulos (esq) e menu (dir) */
+  padding: 0 1rem;
+  /* Espaçamento horizontal opcional */
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* Empilha h1 e h2 verticalmente */
+  justify-content: center;
+
+  align-items: center;
+}
+
+.menu-icons {
+
+  display: flex;
+  flex-direction: column;
+  /* Empilha h1 e h2 verticalmente */
+  justify-content: center;
+}
+
+
+
+
 .toolbar {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: #4e342e;
+  /* TOOLBAR */ /*COR AO REDOR DO BOTAO FILTRO E SETAS*/
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  /*background-color: #4e342e;*/
+  background-color: #2e1a14;
+}
+
+.filter-button,
+.sort-button {
+  background: #f5f5dc;
+  border: none;
+  padding: 0.1rem 1rem;
+  font-weight: bold;
+  color: black;
+  border-radius: 6px;
+  cursor: pointer;
+  align-items: center;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* Distribuição proporcional */
+.filter-button {
+  flex: 0 0 80%;
+}
+
+.sort-button {
+  flex: 0 0 20%;
+}
+
+
+.arrows-sort-button {
+
+  font-size: 2rem;
+  /* Aumenta o tamanho total */
+  transform: scaleX(1.5);
+  /* Aumenta só a largura (horizontal) */
+  display: inline-block;
+  /* Necessário para o transform funcionar */
+  line-height: 1;
+
+
+}
+
+
+
+.product-list {
+  display: grid;
+
+  gap: 1rem;
+
+  grid-template-columns: repeat(3, 1fr); /* Força 3 colunas em notebook */
+  padding: 1rem;
+
+}
+
+.product-card {
+  background-color: black;
+  /*background: #2e1a14; /*COR DA CAIXA DAS IMG*/
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 6px;
+
+  aspect-ratio: 5 / 5; /* largura:altura */
+
+  object-fit: cover; /* garante que a imagem preencha sem deformar */
+}
+
+.product-card h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #f6c744;
+  color: #000;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.price {
+  margin: 0.5rem 0;
+
+  font-weight: bold;
+  color: #f9ab55;
+}
+
+.shipping-link {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #aaa;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.add-button {
+  padding: 0.5rem 1rem;
+  background: #704430;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+
+
+.add-button:hover,
+.filter-button:hover,
+.sort-button:hover {
+  background-color: #8d5e45;
+  color: #fff;
+}
+
+
+@media (max-width: 1023px) {
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+   
   }
+}
 
+@media (min-width: 767px) {
+  .product-list {
+    grid-template-columns: 1fr;
+    /* 2 colunas para notebook */
+  }
+}
 
+@media (max-width: 280px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
 
-  
-
-  
-  
