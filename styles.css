@@ -10,11 +10,17 @@ body {
  /* background-color: #4e342e; */
 /*  background-color: #0d3b2e; */
   color: #fff;
+
+  height: auto; /* Não force altura fixa */
+
+  min-height: 100dvh; /* Garante que ocupe pelo menos a altura da tela */
+  width: 100%;
+  overflow-x: hidden;   /* Evita scroll lateral */
 }
 
 header {
 
-  padding: 2rem 1rem;
+  padding: 10%;
   text-align: center;
   position: relative;
 
@@ -29,7 +35,8 @@ header {
 
   background-attachment: scroll;
   /* melhor para mobile */
-  overflow: hidden;
+
+  /*overflow: hidden;*/ /*ESCONDEU A BARTE DE BAIXO DA TELA*/
 
 
 }
@@ -39,9 +46,10 @@ header::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  /*width: 100%;
   height: 100%;
-  background-color: rgba(0, 25, 0, 0.7);
+  min-height: 100%;*/
+  background-color: rgba(0, 25, 0, 0.5);
   z-index: 0;
 
 
@@ -62,6 +70,47 @@ h1 {
   /* suaviza o texto no Safari/Chrome */
   -moz-osx-font-smoothing: grayscale;
   /* suaviza o texto no Firefox */
+
+  margin-bottom: 20px;
+}
+
+body, html {
+  /*height: auto;*/
+  min-height: 100dvh;
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+}
+/*
+main {
+  min-height: 100vh;
+  display: block;
+  width: 100%;
+
+*/
+
+
+html {
+  /*height: auto;*/
+  min-height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100dvh; /* usa altura real visível no mobile */
+  /*height: auto; */
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #2e1a14;
+}
+
+main {
+  position: relative;
+  z-index: 10;
+
+  min-height: 100dvh;
+  box-sizing: border-box;
 }
 
 
@@ -79,7 +128,7 @@ h1 {
   /*BAG*/
   width: 100%;
   height: 100%;
-
+  min-height: 100%;
   stroke: white;
 
   display: block;
@@ -116,6 +165,9 @@ h1 {
   height: 32px;
   /* Mesma altura do SVG */
   display: inline-block;
+
+  width: 45px;
+  height: 45px;
 }
 
 .menu-button {
@@ -130,10 +182,13 @@ h1 {
   cursor: pointer;
   height: auto;
   /* Deixe crescer conforme o conteúdo */
+  min-height: 100%;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  margin-bottom: 10px;
 }
 
 
@@ -156,6 +211,9 @@ h1 {
   justify-content: center;
 
   align-items: center;
+
+  width: 100%; 
+  text-align: center;
 }
 
 .menu-icons {
@@ -164,6 +222,7 @@ h1 {
   flex-direction: column;
   /* Empilha h1 e h2 verticalmente */
   justify-content: center;
+
 }
 
 
@@ -177,13 +236,14 @@ h1 {
   padding: 1rem;
   /*background-color: #4e342e;*/
   background-color: #2e1a14;
+  padding-bottom: 0px;
 }
 
 .filter-button,
 .sort-button {
   background: #f5f5dc;
   border: none;
-  padding: 0.1rem 1rem;
+  padding: 1rem;
   font-weight: bold;
   color: black;
   border-radius: 6px;
@@ -192,6 +252,7 @@ h1 {
 
   display: flex;
   justify-content: center;
+  font-size: 20px;
 }
 
 /* Distribuição proporcional */
@@ -256,7 +317,7 @@ h1 {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: #f6c744;
+  background: beige;
   color: #000;
   padding: 0.2rem 0.5rem;
   font-size: 0.75rem;
@@ -291,14 +352,34 @@ h1 {
 
 
 
-.add-button:hover,
-.filter-button:hover,
-.sort-button:hover {
+.add-button:hover {
   background-color: #8d5e45;
   color: #fff;
 }
 
+.add-button:active {
+  opacity: 0.3;
+  color: #fff;
+}
 
+.filter-button:hover,
+.sort-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.filter-button:active,
+.sort-button:active {
+  transform: scale(0.95);
+
+}
+
+.menu-button:active,
+.bag-svg-wrapper:active{
+  transform: scale(1.50);
+}
+
+/*
 @media (max-width: 1023px) {
   .product-list {
     grid-template-columns: repeat(2, 1fr);
@@ -309,7 +390,7 @@ h1 {
 @media (min-width: 767px) {
   .product-list {
     grid-template-columns: 1fr;
-    /* 2 colunas para notebook */
+    
   }
 }
 
@@ -319,4 +400,93 @@ h1 {
     align-items: stretch;
   }
 }
+*/
 
+/* Padrão para desktop/laptop: 3 colunas */
+.product-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1rem;
+}
+
+/* Tablets e celulares: 2 colunas */
+@media (max-width: 1023px) {
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* (Opcional) Ajustes finos para celulares muito estreitos */
+@media (max-width: 280px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 500px) {
+
+  header {
+    padding: 2rem 1rem;
+  }
+
+  .filter-button
+     {
+      font-size: 15px;
+    }
+  
+ 
+  .filter-button, .sort-button
+     {
+      padding: 0.1rem;
+    }
+  
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 25, 0, 0.5);
+  z-index: 0;
+  pointer-events: none; /* Evita bloqueio de clique */
+}
+
+
+
+.footer {
+  background-color: #004d00;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  height: 30dvh;
+  
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  height: 30dvh;
+}
+
+.end{
+  
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/*
+header::before {
+  outline: 2px dashed red;
+}
+
+main {
+  outline: 2px solid pink;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+*/
